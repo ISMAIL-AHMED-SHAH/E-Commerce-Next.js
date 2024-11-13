@@ -14,7 +14,7 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails: NextPage<ProductDetailsProps> = async ({ params }) => {
-  const { id } = params;
+  const id = await params?.id;
 
   const singleProduct: Product = await getSingleProduct(id);
   const relatedProduct: Product[] = await getProductByCategory(singleProduct.category);
