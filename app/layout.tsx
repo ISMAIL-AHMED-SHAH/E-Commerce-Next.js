@@ -5,6 +5,8 @@ import "./globals.css";
 import Nav from "@/components/Home/Nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/Home/Footer";
+import StoreProvider from "@/StoreProvider/StoreProvider";
+import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,7 +19,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const inter = Inter ({ subsets: ["latin"]})
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "IQ Shop | Next JS",
@@ -30,17 +32,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        <Nav/>
-        {children}
-        <Footer/> 
-      </body>
-    </html>
-    </ClerkProvider>
+    <StoreProvider>
+      <ClerkProvider>
+        <html lang="en">
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <Nav />
+            {children}
+            <Toaster/>
+            <Footer />
+          </body>
+        </html>
+      </ClerkProvider>
+    </StoreProvider>
   );
 }

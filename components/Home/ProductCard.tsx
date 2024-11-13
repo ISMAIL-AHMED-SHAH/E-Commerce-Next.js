@@ -4,8 +4,12 @@ import { Product } from '@/typing'
 import Image from 'next/image';
 import React from 'react'
 import Link from 'next/link'
-import { Heart, HeartIcon, ShoppingBag, StarIcon } from 'lucide-react';
+import { Heart, ShoppingBag, StarIcon } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '@/store/cartSlice';
+import { RootState } from '@/store/store';
+import { useToast } from '@/hooks/use-toast';
 
 
 type Props={
@@ -15,7 +19,17 @@ const ProductCard = ({product}: Props) => {
 
     const num = Math.round(product.rating.rate)
     const ratingArray = new Array(num).fill(0);
+    const {toast} = useToast()
 
+    
+    const dispatch = useDispatch();
+    const addToCartHandler =(product:Product)=>{
+      toast({
+        description:"item Added to Cart",
+        variant:'success', 
+      })
+      dispatch(addItem(product));
+    }
   return (
     <div className='p-4'>
       
@@ -51,7 +65,9 @@ const ProductCard = ({product}: Props) => {
 
       {/* Buttons */}
       <div className='mt-4 flex items-center space-x-2'>
-        <Button size={"icon"}>
+        <Button onClick={()=>{
+          addToCartHandler(product);
+        }} size={"icon"}>
           <ShoppingBag size={18}/>
         </Button>
         <Button size={"icon"} className='bg-red-500'>
