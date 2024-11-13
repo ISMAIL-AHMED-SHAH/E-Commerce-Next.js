@@ -49,7 +49,7 @@ const ProductDetails: NextPage<ProductDetailsProps> = async ({ params }) => {
             </p>
           </div>
 
-          {/* Divider */}
+          {/*  Divider */}
           <span className='w-1/4 h-[1.6px] bg-gray-500 rounded-lg block mt-4 opacity-20 mb-4'></span>
 
           {/* Price */}
