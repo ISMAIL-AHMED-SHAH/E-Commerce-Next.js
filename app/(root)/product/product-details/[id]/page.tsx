@@ -7,6 +7,7 @@ import { StarIcon } from 'lucide-react';
 import AddtoCart from './add-cart';
 import ProductCard from '@/components/Home/ProductCard';
 
+// No need for getServerSideProps here in the App Directory
 interface ProductDetailsProps {
   params: {
     id: string;
@@ -14,12 +15,11 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails: NextPage<ProductDetailsProps> = async ({ params }) => {
-  const id = await params?.id;
-
+  // Fetch the product and related products
+  const { id } = params;
   const singleProduct: Product = await getSingleProduct(id);
   const relatedProduct: Product[] = await getProductByCategory(singleProduct.category);
 
-  
   const numStars = Math.round(singleProduct?.rating?.rate ?? 0);
   const starArray = Array(numStars).fill(0);
 
@@ -49,7 +49,7 @@ const ProductDetails: NextPage<ProductDetailsProps> = async ({ params }) => {
             </p>
           </div>
 
-          {/*  Divider */}
+          {/* Divider */}
           <span className='w-1/4 h-[1.6px] bg-gray-500 rounded-lg block mt-4 opacity-20 mb-4'></span>
 
           {/* Price */}
