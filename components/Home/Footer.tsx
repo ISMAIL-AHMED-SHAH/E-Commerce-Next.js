@@ -11,9 +11,15 @@ const Footer = () => {
                 <h1 className='text-[25px] font-semibold text-black mb-4'>
                     iQ Shop
                 </h1>
-                <p className='text-sm text-black opacity-60'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil at modi iste repudiandae suscipit? Rerum laborum, atq, illo cupiditate. Pariatur incidunt asperiores dolorum impedit hic.</p>
+                <p className='text-sm text-black opacity-60 text-justify'>
+  At iQ Shop, we are committed to delivering high-quality products that make a difference in our customers lives. 
+  Our mission is to combine innovation and exceptional customer service to bring you solutions that enhance 
+  everyday experiences and create lasting value. From our selection process to your doorstep, we prioritize quality, 
+  reliability, and satisfaction in every step.
+</p>
+
                 <p className='text-base mt-6 text-black opacity-80'>
-                    ( +92 ) 332 2241405 - info@example.com
+                    (+92) 332 2241405 - iqshop@gmail.com
                 </p>
             </div>
 
@@ -51,7 +57,7 @@ const Footer = () => {
 
         {/* Copyright text */}
         <div className='mt-8  grid grid-cols-1 gap-6 sm:grid-cols-2 justify-between w-4/5 mx-auto'>
-            <p className='text-sm text-black opacity-60'>c Copyright iQ Shop 2024</p>
+            <p className='text-sm text-black opacity-60'>©  iQ Shop 2024</p>
             <Image src="/images/pay.svg" alt='pay' width={230} height={230} className='object-contain sm:ml-auto'/>
         </div>
     </div>

@@ -47,7 +47,7 @@ const Cart = () => {
         <div className='flex items-center w-full h-[80vh] flex-col justify-center'>
             <Image src="/images/cart.svg" alt='empty cart' width={400} height={400} className='object-cover mx-auto' />
             <h1 className='mt-8 text-2xl font-semibold'>Your Cart is Empty</h1>
-            <Link href="/">
+            <Link href="/all-products">
             <Button className='mt-4'>Shop Now</Button>
             </Link>
         </div>

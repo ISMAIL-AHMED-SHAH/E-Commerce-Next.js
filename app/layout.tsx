@@ -1,6 +1,7 @@
+
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Home/Nav";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -19,7 +20,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "IQ Shop | Next JS",

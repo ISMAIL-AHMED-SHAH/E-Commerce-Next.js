@@ -27,7 +27,13 @@ const CartSidebar = ({items}: Props) => {
             width={200}
             height={200}
             className='object-cover mx-auto'/>
-            <h1 className='mt-8 text-2xl font-semibold'>Your Cart is empty</h1>
+            <h1 className='mt-8 text-2xl font-semibold'>Your Cart is Empty</h1>
+            <Link href="/all-products" passHref>
+  <SheetClose asChild>
+    <Button className="mt-4">Shop Now</Button>
+  </SheetClose>
+</Link>
+
         </div>
       )}
         {/* if there are cart items */}
@@ -42,6 +48,7 @@ const CartSidebar = ({items}: Props) => {
                         height={60}
                         className='object-cover mb-4'
                         />
+                        
                     </div>
                     <div>
                       {/* title */}
@@ -62,7 +69,7 @@ const CartSidebar = ({items}: Props) => {
 
             <Link href="/cart">
             <SheetClose>
-              <Button className='w-full mb-6 mt-6'> View All Cart</Button>
+              <Button className='w-full mb-6 mt-6 bg-blue-700 rounded-lg'> View All Cart Items</Button>
             </SheetClose>
             </Link>
         </div>

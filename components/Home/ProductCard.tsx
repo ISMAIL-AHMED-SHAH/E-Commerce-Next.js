@@ -6,9 +6,8 @@ import React from 'react'
 import Link from 'next/link'
 import { Heart, ShoppingBag, StarIcon } from 'lucide-react';
 import { Button } from '../ui/button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cartSlice';
-import { RootState } from '@/store/store';
 import { useToast } from '@/hooks/use-toast';
 
 
@@ -50,7 +49,7 @@ const ProductCard = ({product}: Props) => {
       
       {/* Rating */}
       
-      <div className='flex items-center'>{ratingArray.map((star)=>{
+      <div className='flex items-center'>{ratingArray.map(()=>{
           return (<StarIcon key={Math.random() * 1000}
           size={16}
           fill='yellow'
